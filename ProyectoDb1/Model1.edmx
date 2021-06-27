@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bfzkzkyq0abmhdbsc2ruModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="actividadproyectos">
+          <Key>
+            <PropertyRef Name="IDActividadProyectos" />
+          </Key>
+          <Property Name="IDActividadProyectos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Tiempo" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FechaActividad" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IDProyecto" Type="int" Nullable="false" />
+          <Property Name="IDHistoriasUsuario" Type="int" Nullable="false" />
+          <Property Name="IDUsername" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="clientes">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+          </Key>
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+          <Property Name="NombreProyectoActivo" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ProyectoActivo" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empleados">
+          <Key>
+            <PropertyRef Name="IDUsername" />
+          </Key>
+          <Property Name="IDUsername" Type="int" Nullable="false" />
+          <Property Name="FechaContratacion" Type="date" Nullable="false" />
+          <Property Name="IDPuestoTrabajo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="equipotrabajo">
+          <Key>
+            <PropertyRef Name="IDEquipoTrabajo" />
+          </Key>
+          <Property Name="IDEquipoTrabajo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CantidadEmpleados" Type="int" Nullable="false" />
+          <Property Name="NombreEquipo" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IDUsername" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="habilidades">
+          <Key>
+            <PropertyRef Name="IDHabilidades" />
+          </Key>
+          <Property Name="IDHabilidades" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="habilidadesxpuestos">
+          <Key>
+            <PropertyRef Name="IDPuestoTrabajo" />
+            <PropertyRef Name="IDHabilidades" />
+          </Key>
+          <Property Name="IDPuestoTrabajo" Type="int" Nullable="false" />
+          <Property Name="IDHabilidades" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="historiales">
+          <Key>
+            <PropertyRef Name="IDUsername" />
+            <PropertyRef Name="IDPuestoTrabajo" />
+          </Key>
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="FechaFinal" Type="date" Nullable="false" />
+          <Property Name="IDUsername" Type="int" Nullable="false" />
+          <Property Name="IDPuestoTrabajo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="historiasusuario">
+          <Key>
+            <PropertyRef Name="IDHistoriasUsuario" />
+          </Key>
+          <Property Name="IDHistoriasUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Caracteristidas" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+          <Property Name="IDProyecto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="modulos">
+          <Key>
+            <PropertyRef Name="IDModulo" />
+          </Key>
+          <Property Name="IDModulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreModulo" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="p_e_d">
+          <Key>
+            <PropertyRef Name="IDProyecto" />
+          </Key>
+          <Property Name="IDProyecto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PseudoNombre" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="NombreProyecto" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="URL_Table_Treloo" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="URL_GitHub" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="EtiquetaEstado" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FechaAsignacion" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FechaEntrega" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IDSolicitudProyecto" Type="int" Nullable="false" />
+          <Property Name="IDEquipoTrabajo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pantalla">
+          <Key>
+            <PropertyRef Name="IDPrivilegio" />
+          </Key>
+          <Property Name="IDPrivilegio" Type="int" Nullable="false" />
+          <Property Name="NombrePantalla" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IDModulo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="privilegios">
+          <Key>
+            <PropertyRef Name="IDPrivilegio" />
+          </Key>
+          <Property Name="IDPrivilegio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombrePrivilegio" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FechaCreacion" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="privilegiosxrol">
+          <Key>
+            <PropertyRef Name="IDPrivilegio" />
+            <PropertyRef Name="IDRol" />
+          </Key>
+          <Property Name="IDPrivilegio" Type="int" Nullable="false" />
+          <Property Name="IDRol" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="puestotrabajo">
+          <Key>
+            <PropertyRef Name="IDPuestoTrabajo" />
+          </Key>
+          <Property Name="IDPuestoTrabajo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Salario" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="roles">
+          <Key>
+            <PropertyRef Name="IDRol" />
+          </Key>
+          <Property Name="IDRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreRol" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FechaCreacion" Type="date" Nullable="false" />
+          <Property Name="FechaModificacion" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="solicitudesproyecto">
+          <Key>
+            <PropertyRef Name="IDSolicitudProyecto" />
+          </Key>
+          <Property Name="IDSolicitudProyecto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreP" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="TecnologiasAplicables" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Presupuesto" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="telefonos">
+          <Key>
+            <PropertyRef Name="IDUsuarios" />
+          </Key>
+          <Property Name="IDUsuarios" Type="int" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+          </Key>
+          <Property Name="IDUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FechaCreacion" Type="date" Nullable="false" />
+          <Property Name="NombreCompleto" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Direccion_Calle" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Direccion_Ciudad" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Direccion_Departamento" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="CorreoElectronico" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FechaNacimineto" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IDRol" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="bfzkzkyq0abmhdbsc2ruModelStoreContainer">
+          <EntitySet Name="actividadproyectos" EntityType="Self.actividadproyectos" Schema="" store:Type="Tables" />
+          <EntitySet Name="clientes" EntityType="Self.clientes" Schema="" store:Type="Tables" />
+          <EntitySet Name="empleados" EntityType="Self.empleados" Schema="" store:Type="Tables" />
+          <EntitySet Name="equipotrabajo" EntityType="Self.equipotrabajo" Schema="" store:Type="Tables" />
+          <EntitySet Name="habilidades" EntityType="Self.habilidades" Schema="" store:Type="Tables" />
+          <EntitySet Name="habilidadesxpuestos" EntityType="Self.habilidadesxpuestos" Schema="" store:Type="Tables" />
+          <EntitySet Name="historiales" EntityType="Self.historiales" Schema="" store:Type="Tables" />
+          <EntitySet Name="historiasusuario" EntityType="Self.historiasusuario" Schema="" store:Type="Tables" />
+          <EntitySet Name="modulos" EntityType="Self.modulos" Schema="" store:Type="Tables" />
+          <EntitySet Name="p_e_d" EntityType="Self.p_e_d" Schema="" store:Type="Tables" />
+          <EntitySet Name="pantalla" EntityType="Self.pantalla" Schema="" store:Type="Tables" />
+          <EntitySet Name="privilegios" EntityType="Self.privilegios" Schema="" store:Type="Tables" />
+          <EntitySet Name="privilegiosxrol" EntityType="Self.privilegiosxrol" Schema="" store:Type="Tables" />
+          <EntitySet Name="puestotrabajo" EntityType="Self.puestotrabajo" Schema="" store:Type="Tables" />
+          <EntitySet Name="roles" EntityType="Self.roles" Schema="" store:Type="Tables" />
+          <EntitySet Name="solicitudesproyecto" EntityType="Self.solicitudesproyecto" Schema="" store:Type="Tables" />
+          <EntitySet Name="telefonos" EntityType="Self.telefonos" Schema="" store:Type="Tables" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bfzkzkyq0abmhdbsc2ruModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="actividadproyectos">
+          <Key>
+            <PropertyRef Name="IDActividadProyectos" />
+          </Key>
+          <Property Name="IDActividadProyectos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tiempo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaActividad" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDProyecto" Type="Int32" Nullable="false" />
+          <Property Name="IDHistoriasUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IDUsername" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="clientes">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+          </Key>
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+          <Property Name="NombreProyectoActivo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProyectoActivo" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empleados">
+          <Key>
+            <PropertyRef Name="IDUsername" />
+          </Key>
+          <Property Name="IDUsername" Type="Int32" Nullable="false" />
+          <Property Name="FechaContratacion" Type="DateTime" Nullable="false" />
+          <Property Name="IDPuestoTrabajo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="equipotrabajo">
+          <Key>
+            <PropertyRef Name="IDEquipoTrabajo" />
+          </Key>
+          <Property Name="IDEquipoTrabajo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CantidadEmpleados" Type="Int32" Nullable="false" />
+          <Property Name="NombreEquipo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDUsername" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="habilidades">
+          <Key>
+            <PropertyRef Name="IDHabilidades" />
+          </Key>
+          <Property Name="IDHabilidades" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="habilidadesxpuestos">
+          <Key>
+            <PropertyRef Name="IDPuestoTrabajo" />
+            <PropertyRef Name="IDHabilidades" />
+          </Key>
+          <Property Name="IDPuestoTrabajo" Type="Int32" Nullable="false" />
+          <Property Name="IDHabilidades" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="historiales">
+          <Key>
+            <PropertyRef Name="IDUsername" />
+            <PropertyRef Name="IDPuestoTrabajo" />
+          </Key>
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
+          <Property Name="FechaFinal" Type="DateTime" Nullable="false" />
+          <Property Name="IDUsername" Type="Int32" Nullable="false" />
+          <Property Name="IDPuestoTrabajo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="historiasusuario">
+          <Key>
+            <PropertyRef Name="IDHistoriasUsuario" />
+          </Key>
+          <Property Name="IDHistoriasUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Caracteristidas" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IDProyecto" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="modulos">
+          <Key>
+            <PropertyRef Name="IDModulo" />
+          </Key>
+          <Property Name="IDModulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreModulo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="p_e_d">
+          <Key>
+            <PropertyRef Name="IDProyecto" />
+          </Key>
+          <Property Name="IDProyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PseudoNombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreProyecto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="URL_Table_Treloo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="URL_GitHub" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EtiquetaEstado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaAsignacion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaEntrega" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDSolicitudProyecto" Type="Int32" Nullable="false" />
+          <Property Name="IDEquipoTrabajo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pantalla">
+          <Key>
+            <PropertyRef Name="IDPrivilegio" />
+          </Key>
+          <Property Name="IDPrivilegio" Type="Int32" Nullable="false" />
+          <Property Name="NombrePantalla" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDModulo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="privilegios">
+          <Key>
+            <PropertyRef Name="IDPrivilegio" />
+          </Key>
+          <Property Name="IDPrivilegio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombrePrivilegio" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="privilegiosxrol">
+          <Key>
+            <PropertyRef Name="IDPrivilegio" />
+            <PropertyRef Name="IDRol" />
+          </Key>
+          <Property Name="IDPrivilegio" Type="Int32" Nullable="false" />
+          <Property Name="IDRol" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="puestotrabajo">
+          <Key>
+            <PropertyRef Name="IDPuestoTrabajo" />
+          </Key>
+          <Property Name="IDPuestoTrabajo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Salario" Type="Decimal" Nullable="false" />
+        </EntityType>
+        <EntityType Name="roles">
+          <Key>
+            <PropertyRef Name="IDRol" />
+          </Key>
+          <Property Name="IDRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreRol" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="solicitudesproyecto">
+          <Key>
+            <PropertyRef Name="IDSolicitudProyecto" />
+          </Key>
+          <Property Name="IDSolicitudProyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreP" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TecnologiasAplicables" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Presupuesto" Type="Decimal" Nullable="false" />
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="telefonos">
+          <Key>
+            <PropertyRef Name="IDUsuarios" />
+          </Key>
+          <Property Name="IDUsuarios" Type="Int32" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+          </Key>
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Contraseña" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="NombreCompleto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion_Calle" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion_Ciudad" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion_Departamento" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CorreoElectronico" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaNacimineto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDRol" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="bfzkzkyq0abmhdbsc2ruEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="actividadproyectos" EntityType="Self.actividadproyectos" />
+          <EntitySet Name="clientes" EntityType="Self.clientes" />
+          <EntitySet Name="empleados" EntityType="Self.empleados" />
+          <EntitySet Name="equipotrabajo" EntityType="Self.equipotrabajo" />
+          <EntitySet Name="habilidades" EntityType="Self.habilidades" />
+          <EntitySet Name="habilidadesxpuestos" EntityType="Self.habilidadesxpuestos" />
+          <EntitySet Name="historiales" EntityType="Self.historiales" />
+          <EntitySet Name="historiasusuario" EntityType="Self.historiasusuario" />
+          <EntitySet Name="modulos" EntityType="Self.modulos" />
+          <EntitySet Name="p_e_d" EntityType="Self.p_e_d" />
+          <EntitySet Name="pantalla" EntityType="Self.pantalla" />
+          <EntitySet Name="privilegios" EntityType="Self.privilegios" />
+          <EntitySet Name="privilegiosxrol" EntityType="Self.privilegiosxrol" />
+          <EntitySet Name="puestotrabajo" EntityType="Self.puestotrabajo" />
+          <EntitySet Name="roles" EntityType="Self.roles" />
+          <EntitySet Name="solicitudesproyecto" EntityType="Self.solicitudesproyecto" />
+          <EntitySet Name="telefonos" EntityType="Self.telefonos" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bfzkzkyq0abmhdbsc2ruModelStoreContainer" CdmEntityContainer="bfzkzkyq0abmhdbsc2ruEntities">
+          <EntitySetMapping Name="actividadproyectos">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.actividadproyectos">
+              <MappingFragment StoreEntitySet="actividadproyectos">
+                <ScalarProperty Name="IDActividadProyectos" ColumnName="IDActividadProyectos" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
+                <ScalarProperty Name="FechaActividad" ColumnName="FechaActividad" />
+                <ScalarProperty Name="IDProyecto" ColumnName="IDProyecto" />
+                <ScalarProperty Name="IDHistoriasUsuario" ColumnName="IDHistoriasUsuario" />
+                <ScalarProperty Name="IDUsername" ColumnName="IDUsername" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clientes">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.clientes">
+              <MappingFragment StoreEntitySet="clientes">
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="NombreProyectoActivo" ColumnName="NombreProyectoActivo" />
+                <ScalarProperty Name="ProyectoActivo" ColumnName="ProyectoActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empleados">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.empleados">
+              <MappingFragment StoreEntitySet="empleados">
+                <ScalarProperty Name="IDUsername" ColumnName="IDUsername" />
+                <ScalarProperty Name="FechaContratacion" ColumnName="FechaContratacion" />
+                <ScalarProperty Name="IDPuestoTrabajo" ColumnName="IDPuestoTrabajo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equipotrabajo">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.equipotrabajo">
+              <MappingFragment StoreEntitySet="equipotrabajo">
+                <ScalarProperty Name="IDEquipoTrabajo" ColumnName="IDEquipoTrabajo" />
+                <ScalarProperty Name="CantidadEmpleados" ColumnName="CantidadEmpleados" />
+                <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
+                <ScalarProperty Name="IDUsername" ColumnName="IDUsername" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="habilidades">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.habilidades">
+              <MappingFragment StoreEntitySet="habilidades">
+                <ScalarProperty Name="IDHabilidades" ColumnName="IDHabilidades" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="habilidadesxpuestos">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.habilidadesxpuestos">
+              <MappingFragment StoreEntitySet="habilidadesxpuestos">
+                <ScalarProperty Name="IDPuestoTrabajo" ColumnName="IDPuestoTrabajo" />
+                <ScalarProperty Name="IDHabilidades" ColumnName="IDHabilidades" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="historiales">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.historiales">
+              <MappingFragment StoreEntitySet="historiales">
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
+                <ScalarProperty Name="IDUsername" ColumnName="IDUsername" />
+                <ScalarProperty Name="IDPuestoTrabajo" ColumnName="IDPuestoTrabajo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="historiasusuario">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.historiasusuario">
+              <MappingFragment StoreEntitySet="historiasusuario">
+                <ScalarProperty Name="IDHistoriasUsuario" ColumnName="IDHistoriasUsuario" />
+                <ScalarProperty Name="Caracteristidas" ColumnName="Caracteristidas" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="IDProyecto" ColumnName="IDProyecto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="modulos">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.modulos">
+              <MappingFragment StoreEntitySet="modulos">
+                <ScalarProperty Name="IDModulo" ColumnName="IDModulo" />
+                <ScalarProperty Name="NombreModulo" ColumnName="NombreModulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="p_e_d">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.p_e_d">
+              <MappingFragment StoreEntitySet="p_e_d">
+                <ScalarProperty Name="IDProyecto" ColumnName="IDProyecto" />
+                <ScalarProperty Name="PseudoNombre" ColumnName="PseudoNombre" />
+                <ScalarProperty Name="NombreProyecto" ColumnName="NombreProyecto" />
+                <ScalarProperty Name="URL_Table_Treloo" ColumnName="URL_Table_Treloo" />
+                <ScalarProperty Name="URL_GitHub" ColumnName="URL_GitHub" />
+                <ScalarProperty Name="EtiquetaEstado" ColumnName="EtiquetaEstado" />
+                <ScalarProperty Name="FechaAsignacion" ColumnName="FechaAsignacion" />
+                <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+                <ScalarProperty Name="IDSolicitudProyecto" ColumnName="IDSolicitudProyecto" />
+                <ScalarProperty Name="IDEquipoTrabajo" ColumnName="IDEquipoTrabajo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pantalla">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.pantalla">
+              <MappingFragment StoreEntitySet="pantalla">
+                <ScalarProperty Name="IDPrivilegio" ColumnName="IDPrivilegio" />
+                <ScalarProperty Name="NombrePantalla" ColumnName="NombrePantalla" />
+                <ScalarProperty Name="IDModulo" ColumnName="IDModulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="privilegios">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.privilegios">
+              <MappingFragment StoreEntitySet="privilegios">
+                <ScalarProperty Name="IDPrivilegio" ColumnName="IDPrivilegio" />
+                <ScalarProperty Name="NombrePrivilegio" ColumnName="NombrePrivilegio" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="privilegiosxrol">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.privilegiosxrol">
+              <MappingFragment StoreEntitySet="privilegiosxrol">
+                <ScalarProperty Name="IDPrivilegio" ColumnName="IDPrivilegio" />
+                <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="puestotrabajo">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.puestotrabajo">
+              <MappingFragment StoreEntitySet="puestotrabajo">
+                <ScalarProperty Name="IDPuestoTrabajo" ColumnName="IDPuestoTrabajo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Salario" ColumnName="Salario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roles">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.roles">
+              <MappingFragment StoreEntitySet="roles">
+                <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+                <ScalarProperty Name="NombreRol" ColumnName="NombreRol" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="solicitudesproyecto">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.solicitudesproyecto">
+              <MappingFragment StoreEntitySet="solicitudesproyecto">
+                <ScalarProperty Name="IDSolicitudProyecto" ColumnName="IDSolicitudProyecto" />
+                <ScalarProperty Name="NombreP" ColumnName="NombreP" />
+                <ScalarProperty Name="TecnologiasAplicables" ColumnName="TecnologiasAplicables" />
+                <ScalarProperty Name="Presupuesto" ColumnName="Presupuesto" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="telefonos">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.telefonos">
+              <MappingFragment StoreEntitySet="telefonos">
+                <ScalarProperty Name="IDUsuarios" ColumnName="IDUsuarios" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="bfzkzkyq0abmhdbsc2ruModel.usuarios">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+                <ScalarProperty Name="Direccion_Calle" ColumnName="Direccion_Calle" />
+                <ScalarProperty Name="Direccion_Ciudad" ColumnName="Direccion_Ciudad" />
+                <ScalarProperty Name="Direccion_Departamento" ColumnName="Direccion_Departamento" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="FechaNacimineto" ColumnName="FechaNacimineto" />
+                <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="50ebd9ab720f44dcbd912e7d03bf1543" Name="Diagram1">
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.actividadproyectos" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.clientes" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.empleados" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.equipotrabajo" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.habilidades" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.habilidadesxpuestos" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.historiales" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.historiasusuario" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.modulos" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.p_e_d" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.pantalla" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.privilegios" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.privilegiosxrol" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.puestotrabajo" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.roles" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.solicitudesproyecto" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.telefonos" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfzkzkyq0abmhdbsc2ruModel.usuarios" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
